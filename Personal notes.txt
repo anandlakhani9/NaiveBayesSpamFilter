@@ -1,0 +1,38 @@
+TASK A
+	Calculate log[P(C=c)]
+	Return in a numpy array
+
+TASK B
+	Each message is represented by a set of k key words
+	message = w_1, w_2, w_3, ... , w_k
+	the ith keyword
+		w_i = 0 if the keyword is not present
+		w_i = 1 if the keyword is present
+	
+	Calculate the probability of a keyword being drawn, Theta_c,w = (n_c,w + a)/(n_c + ka) = P(w_i | C = c)
+		Here, the laplace smoothing, a = 1
+		k is the number total number of key words (54 for our data set)
+		n_c,w is the number of times the keyword appears in a message of class C=c 
+		n_c is the number of times any keyword appears in class C=c 
+	
+	Return an array of log[Theta_c,w]
+
+
+TASK C	
+	Calculate log[P(message|C=c)]
+		c_hat will be noted as c' here
+		calulate c' 
+			c' = argmax[log(P[C=c]) + SUM[w_i log(Theta_c,w)]]
+		c' ~= log[P(message|C=c)]
+	
+	Return Theta as an array with 2 rows and 54 columns.
+		Row 1 should contain info about C=0
+		Row 2 should contain info about C=2
+		Each column should represent the keyword w_i
+		The values stored in this table will be c'
+		
+	
+
+		
+	
+	
